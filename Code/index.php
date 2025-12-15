@@ -1,16 +1,17 @@
 <?php
-// C:\xampp\htdocs\courses\index.php
-<?php
-    $page = $_GET['page'] ?? 'login';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-    $allowedPages = ['login', 'search', 'import', 'download'];
+$page = $_GET['page'] ?? 'login';
 
-    if (!in_array($page, $allowedPages)) {
-        die('Page not found');
-    }
+$allowedPages = ['login', 'search', 'import', 'download'];
 
-    require __DIR__ . "/pages/Public/{$page}.php";
-?>
+if (!in_array($page, $allowedPages, true)) {
+    http_response_code(404);
+    exit('Page not found');
+}
+
+require __DIR__ . "/pages/Public/{$page}.php";
 // $page = $_GET['page'] ?? 'home';
 
 // // ENDPOINT 1: Home (Safe)
