@@ -28,7 +28,6 @@ if (!in_array($page, $allowedPages, true)) {
             font-family: 'Segoe UI', sans-serif;
             background-color: #f4f6f8;
         }
-
         .navbar {
             display: flex;
             justify-content: center !important;
@@ -57,17 +56,20 @@ if (!in_array($page, $allowedPages, true)) {
             background-color: #3498db;
             color: white;
         }
-
+        .home { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        .welcome { font-size: 24px ; }
+        .logout { margin-top: 20px !important; }
+        .logout a { text-decoration: none; color: white; background-color: red; padding: 10px 20px; border-radius: 5px !important; }
     </style>
     <link rel="stylesheet" href="/WAF/Code/pages/CSS/bootstrap.min.css">
 </head>
 <body>
 
     <div class="navbar">
-        <a href="?page=login" class="<?php echo $page == 'login' ? 'active' : ''; ?>">Login</a>
-        <a href="?page=search" class="<?php echo $page == 'search' ? 'active' : ''; ?>">Search (SQLi)</a>
+        <a href="?page=login" class="<?php echo $page == 'login' ? 'active' : ''; ?>">Login (SQLi)</a>
+        <a href="?page=search" class="<?php echo $page == 'search' ? 'active' : ''; ?>">Search (XSS)</a>
         <a href="?page=import" class="<?php echo $page == 'import' ? 'active' : ''; ?>">Import (SSRF)</a>
-        <a href="?page=download" class="<?php echo $page == 'download' ? 'active' : ''; ?>">Download (Traversal)</a>
+        <a href="?page=download" class="<?php echo $page == 'download' ? 'active' : ''; ?>">Download (Path Traversal)</a>
         <a href="?page=home" class="<?php echo $page == 'home' ? 'active' : ''; ?>">Home</a>
     </div>
 
