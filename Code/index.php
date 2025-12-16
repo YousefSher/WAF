@@ -74,7 +74,7 @@ if (!in_array($page, $allowedPages, true)) {
     </div>
 
     <?php require __DIR__ . "/pages/Public/{$page}.php"; ?>
-    <script src="/WAF/Code/pages/JS/bootstrap.min.js"></script>
-    <script src="/WAF/Code/pages/JS/main.js"></script>
+    <script src="/pages/JS/bootstrap.min.js"></script>
+    <script src="/pages/JS/main.js"></script>
 </body>
 </html>
