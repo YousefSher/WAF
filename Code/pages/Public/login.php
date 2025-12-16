@@ -24,34 +24,90 @@ if (isset($_REQUEST['email'], $_REQUEST['pass'])) {
 }
 
 ?>
+<style>
+    /* Reset and body styling */
+    .login-card {
+        background-color: #fff;
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        margin: auto;
+    }
 
-<div class="container mt-5 w-50 p-4 shadow-lg border rounded">
+    .login-card h2 {
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
 
-    <h3 class="text-center">Log in</h3>
-    <p class="text-center text-muted">Never stop learning!</p>
+    .login-card p {
+        margin-bottom: 30px;
+        color: #6c757d;
+    }
 
+    /* Input fields */
+    .login-card input[type="email"],
+    .login-card input[type="password"] {
+        width: 100%;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        border-radius: 6px;
+        border: 1px solid #ced4da;
+        font-size: 16px;
+    }
+
+    .login-card input[type="email"]:focus,
+    .login-card input[type="password"]:focus {
+        outline: none;
+        border-color: #3498db;
+        box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+    }
+
+    /* Button styling */
+    .login-card button {
+        width: 100%;
+        padding: 12px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .login-card button:hover {
+        background-color: #0056b3;
+    }
+    .alert {
+        background-color: #f8d7da;   /* light red */
+        color: #721c24;             /* dark red text */
+        padding: 10px 15px;
+        border-radius: 6px;
+        margin-bottom: 20px;
+        border: 1px solid #f5c6cb;
+        text-align: center;
+        font-size: 14px;
+    }
+</style>
+<div class="login-card">
     <?php if (isset($_GET['error'])): ?>
-        <div class="alert alert-danger text-center">
+        <div class="alert">
             <?php
                 if ($_GET['error'] === 'pass') echo 'Wrong password.';
                 if ($_GET['error'] === 'user') echo 'User does not exist.';
             ?>
         </div>
     <?php endif; ?>
-
-    <form method="post">
-        <div class="input-group mb-3">
-          <!-- vulnerability 2 is the type -->
-            <input type="text" class="form-control" name="email" placeholder="E-mail" required>
-        </div>
-
-        <div class="input-group mb-3">
-            <input type="password" class="form-control" name="pass" placeholder="Password" required>
-        </div>
-
-        <div class="d-grid">
-            <button class="btn btn-primary" type="submit">Log in</button>
-        </div>
-    </form>
+        <h2>Log in</h2>
+        <p>Never stop learning!</p>
+        <form method="post" action="?page=login">
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="password" name="pass" placeholder="Password" required>
+            <button type="submit">Log in</button>
+        </form>
+    </div>                                                                          
 </div>
 
