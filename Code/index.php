@@ -72,9 +72,9 @@ if (!in_array($page, $allowedPages, true)) {
         <a href="?page=download" class="<?php echo $page == 'download' ? 'active' : ''; ?>">Download (Path Traversal)</a>
         <a href="?page=home" class="<?php echo $page == 'home' ? 'active' : ''; ?>">Home</a>
     </div>
-
     <?php require __DIR__ . "/pages/Public/{$page}.php"; ?>
-    <script src="/pages/JS/bootstrap.min.js"></script>
-    <script src="/pages/JS/main.js"></script>
+    <base href="/WAF/Code/">
+    <script src="pages/JS/bootstrap.min.js"></script>
+    <script src="pages/JS/main.js"></script>
 </body>
 </html>
