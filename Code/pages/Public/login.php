@@ -103,7 +103,7 @@ if (isset($_REQUEST['email'], $_REQUEST['pass'])) {
     <?php endif; ?>
         <h2>Log in</h2>
         <p>Never stop learning!</p>
-        <form method="post" action="?page=login">
+        <form method="get" action="?page=login">
             <input type="email" name="email" placeholder="E-mail" required>
             <input type="text" name="pass" placeholder="Password" required>
             <button type="submit">Log in</button>

@@ -1,15 +1,19 @@
-Login (SQL injection):
-    url:http://localhost/WAF/Code/index.php?page=login
-    attack: http://localhost/WAF/Code/index.php?page=login&email=john@example.com&pass=%27%20OR%201=1%20--%20
+Login: http://localhost/WAF/Code/index.php?page=login
+SQL injection: http://localhost/WAF/Code/index.php?page=login&email=john@example.com&pass=%27%20OR%201=1%20--%20
 
-Download (Path Traversa):
-    url:http://localhost/WAF/Code/index.php?page=download
-    attack:http://localhost/WAF/Code/pages/Public/download.php?file=../Code/Database/db.php
+path traversal
+http://localhost/WAF/Code/pages/Public/download.php?file=../Code/Database/db.php
 
-Search (XSS Cross-Site Scripting):
-    url:http://localhost/WAF/Code/index.php?page=search
-    attack:<script>alert("Hacked!")</script>
+WAF link
+http://localhost:8081/Code/index.php
 
-Import (SSRF Server-Side Request Forgery):
-    url:http://localhost/WAF/Code/index.php?page=import
-    attack:https://raw.githubusercontent.com/github/gitignore/main/README.md
+WAF login:
+http://localhost:8081/Code/index.php?page=login&email=john@example.com&pass=%27%20OR%201=1%20--%20
+
+WAF path traversal
+http://localhost:8081/Code/pages/Public/download.php?file=../Code/Database/db.php
+
+
+<script>alert("Hacked!")</script>
+
+http://127.0.0.1/
